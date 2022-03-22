@@ -10,7 +10,7 @@ RUN apt update -yqq \
     && apt install -yqq \
         unzip \
         git \
-        dotnet-sdk-3.1 \
+        dotnet-sdk-6.0 \
         wkhtmltopdf \
     && rm -rf /var/lib/apt/lists/*
 
@@ -19,6 +19,6 @@ ENTRYPOINT [ "docfx" ]
 
 ADD ./entrypoint.sh /usr/local/bin/docfx
 
-ADD https://github.com/dotnet/docfx/releases/download/v2.56.7/docfx.zip /
+ADD https://github.com/dotnet/docfx/releases/download/v2.59.0/docfx.zip /
 RUN unzip docfx.zip -d /docfx && \
     rm docfx.zip
